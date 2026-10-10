@@ -37,7 +37,7 @@ public class AccountTests
     public void Transaction_InvalidArguments_ThrowsArgumentException()
     {
         //Validation dùng chung
-        Assert.Throws<ArgumentException>(() => new Income(-100m, "Thưởng"));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Income(-100m, "Thưởng"));
         Assert.Throws<ArgumentException>(() => new Expense(100_000m, " ")); 
     }
 }
