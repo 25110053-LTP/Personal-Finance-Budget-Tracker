@@ -8,7 +8,7 @@ public class AccountTests
     public void Record_ValidTransactions_UpdatesBalanceCorrectly()
     {
         //happy path
-        var account = new Account("Ví chính, openingBalance: 1_000_000m");
+        var account = new Account("Ví chính", openingBalance: 1_000_000m);
 
         account.Record(new Income(15_000_000m, "Lương"));
         account.Record(new Expense(3_500_000m, "Tiền nhà"));
@@ -37,7 +37,7 @@ public class AccountTests
     public void Transaction_InvalidArguments_ThrowsArgumentException()
     {
         //Validation dùng chung
-        Assert.Throws<ArgumentNullException>(() => new Income(-100m, "Thưởng"));
-        Assert.Throws<ArgumentNullException>(() => new Expense(100_000m, " ")); 
+        Assert.Throws<ArgumentException>(() => new Income(-100m, "Thưởng"));
+        Assert.Throws<ArgumentException>(() => new Expense(100_000m, " ")); 
     }
 }
