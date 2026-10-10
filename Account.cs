@@ -1,11 +1,12 @@
+//Chuyển kiểu dữ liệu tiền tệ sang decimal
 namespace BudgetTracker.Models;
 
 public sealed class Account
 {
     private readonly List<ITransaction> _transactions = new();
 
-    public string Name { get; }
-    public decimal Balance { get; private set; }
+    public string Name {get;}
+    public decimal Balance {get; private set;}
     public IReadOnlyList<ITransaction> Transactions => _transactions;
 
     public Account(string name, decimal openingBalance = 0m)
