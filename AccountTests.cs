@@ -15,7 +15,7 @@ public class AccountTests
         account.Record(new Expense(450_000m, "Ăn uống"));
 
         //Kiểm tra số dư
-        Assert.Equal(12_050_000, account.Balance);
+        Assert.Equal(12_050_000m, account.Balance);
         Assert.Equal(3, account.Transactions.Count);
     }
 
