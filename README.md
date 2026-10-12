@@ -1,6 +1,6 @@
 NỘI DUNG BÁO CÁO
 
-BÁO CÁO TIẾN ĐỘ TUẦN 1 — ĐỒ ÁN CUỐI KỲ Môn học: Lập trình Hướng đối tượng (Object-Oriented Programming) Mã lớp học phần: OOP, HK1 2026-2027, Đợt 1 — GVHD: Huỳnh Xuân Phụng Đề tài: Personal Finance / Budget Tracker Link GitHub: [https://github.com/Link-Của-Bạn/Budget-Tracker]
+BÁO CÁO TIẾN ĐỘ TUẦN 1 — ĐỒ ÁN CUỐI KỲ Môn học: Lập trình Hướng đối tượng (Object-Oriented Programming) Mã lớp học phần: OOP, HK1 2026-2027, Đợt 1 — GVHD: Huỳnh Xuân Phụng Đề tài: Personal Finance / Budget Tracker Link GitHub: (https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/tree/main)
 
 **Công việc đã thực hiện**
 
