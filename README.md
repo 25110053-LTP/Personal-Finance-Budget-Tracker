@@ -2,6 +2,14 @@ NỘI DUNG BÁO CÁO
 
 BÁO CÁO TIẾN ĐỘ TUẦN 1 — ĐỒ ÁN CUỐI KỲ Môn học: Lập trình Hướng đối tượng (Object-Oriented Programming) Mã lớp học phần: OOP, HK1 2026-2027, Đợt 1 — GVHD: Huỳnh Xuân Phụng Đề tài: Personal Finance / Budget Tracker Link GitHub: (https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/tree/main)
 
+## Phân công thành viên (Tuần 1)
+
+| Thành viên | MSSV | Nhiệm vụ tuần 1 | File phụ trách |
+|---|---|---|---|
+| A – Phước | 25110053 | Model cốt lõi (Category, Account, xử lý overdraft) và toàn bộ kiểm thử tự động (xUnit) | [Category.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/Category.cs), [Account.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/Account.cs), [InsufficientFundsException.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/InsufficientFundsException.cs), [AccountTests.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/AccountTests.cs), [PolymorphismTests.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/PolymorphismTests.cs) |
+| B – Thư | 25110062 | Đa hình giao dịch (ITransaction, TransactionBase, Income, Expense) và kịch bản Demo | [ITransaction.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/ITransaction.cs), [TransactionBase.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/TransactionBase.cs), [Income.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/Income.cs), [Expense.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/Expense.cs), [Program.cs](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/blob/main/Program.cs) |
+| Cả hai | | Báo cáo, Class Diagram v1, Self-Explanation | [docs/](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/tree/main/docs) |
+
 **Công việc đã thực hiện**
 
 - Thiết kế và cài đặt các class cốt lõi cho phần Model:
