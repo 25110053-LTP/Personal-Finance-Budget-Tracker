@@ -39,3 +39,23 @@ BÁO CÁO TIẾN ĐỘ TUẦN 1 — ĐỒ ÁN CUỐI KỲ Môn học: Lập trì
 - Viết kịch bản test bổ sung cho các trường hợp vượt ngân sách và net worth.
 - Viết phần Tự giải trình cho nguyên lý Đóng gói (Encapsulation).
 - Vẽ và cập nhật sơ đồ lớp Class Diagram v2.
+
+## AI Log - Tuần 1
+
+| Ngày | AI đã làm | Kiểm chứng | Nhóm đã sửa | Commit |
+|---|---|---|---|---|
+| 11/10 hiết kế + code Category, Account | `dotnet run` | Không có | [`491fd4e`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/491fd4e) |
+| 11/10 | Thiết kế + code ITransaction, Income, Expense | chạy thử | Không có | [`c97624d`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/c97624d), [`34a5b6a`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/34a5b6a) |
+| 12/10 | Viết test xUnit (Account, đa hình) | `dotnet test` 4/4 | Sửa 3 lỗi (bảng dưới) | `829da45`...`a08c130` (11/10) |
+| 12/10 | Nháp Self-explanation đa hình | đối chiếu code | Điều chỉnh theo ý hiểu của nhóm  | [`03198d1`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/03198d1) |
+| 12-13/10 | Nháp báo cáo, Class_Diagram_v1.md | đối chiếu code và kết quả test | không có | [`8d7ea94`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/8d7ea94), [`d4e5fa4`](https://github.com/25110053-LTP/Personal-Finance-Budget-Tracker/commit/d4e5fa4) |
+
+Các commit "Update README.md" (`176c40a`, `65ab228`, `e7675e5`, `8b90c72`, `e52268d`) là chỉnh sửa báo cáo của nhóm không dùng AI.
+
+## Lỗi của AI và cách nhóm xử lý
+
+| Lỗi | Phát hiện bằng | Cách sửa | Commit |
+|---|---|---|---|
+| [Thiếu hậu tố `m` ở `12_050_000` (decimal), 1/3 test fail] | `dotnet test` | Thêm `m` | `21aba67`, `6b65fe4` |
+| [Dòng 40 dùng `throws` sai] | `dotnet test` | Sửa cách kiểm tra ngoại lệ | `a24b207` |
+| [Xung đột điểm vào Program.cs, CS7022, `GenerateProgramFile`] | `dotnet test` | Sửa Program.cs, csproj | `b2392f6`, `e977c5a` |
