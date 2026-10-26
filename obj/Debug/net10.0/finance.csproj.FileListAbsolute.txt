@@ -1,0 +1,5 @@
+c:\Users\ADMIN\Documents\2025-2026\OOP\proj\Personal-Finance-Budget-Tracker\obj\Debug\net10.0\finance.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\ADMIN\Documents\2025-2026\OOP\proj\Personal-Finance-Budget-Tracker\obj\Debug\net10.0\finance.AssemblyInfoInputs.cache
+c:\Users\ADMIN\Documents\2025-2026\OOP\proj\Personal-Finance-Budget-Tracker\obj\Debug\net10.0\finance.AssemblyInfo.cs
+c:\Users\ADMIN\Documents\2025-2026\OOP\proj\Personal-Finance-Budget-Tracker\obj\Debug\net10.0\finance.csproj.CoreCompileInputs.cache
+c:\Users\ADMIN\Documents\2025-2026\OOP\proj\Personal-Finance-Budget-Tracker\obj\Debug\net10.0\finance.sourcelink.json
