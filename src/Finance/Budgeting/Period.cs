@@ -5,9 +5,12 @@ public readonly record struct Period
     public int Year {get;}
     public int Month {get;}
 
-    public Period(int Year, int Month)
+    public Period(int year, int month)
     {
-        if (Year < 1) throw new ArgumentOutOfRangeException(nameof(Year), Year, "Năm không hợp lệ");
-        if (Month is < 1 or >12) throw new ArgumentOutOfRangeException(nameof(Month), Month, "Tháng không hợp lệ.");
+        if (year < 1) throw new ArgumentOutOfRangeException(nameof(year), year, "Năm không hợp lệ");
+        if (month is < 1 or >12) throw new ArgumentOutOfRangeException(nameof(month), month, "Tháng không hợp lệ.");
+
+        Year = year;
+        Month = month;
     }
 }
