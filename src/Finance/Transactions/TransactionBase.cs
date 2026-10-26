@@ -5,7 +5,7 @@ public abstract class TransactionBase : ITransaction
     public decimal Amount{ get; }
     public Category Category{ get; }
     public DateTime Date{ get; }
-    TransactionBase(decimal amount, Category category, DateTime? date = null)
+    protected TransactionBase(decimal amount, Category category, DateTime? date = null)
     {
         if(amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, "Số tiền phải lớn hơn 0.");
         ArgumentNullException.ThrowIfNull(category);
