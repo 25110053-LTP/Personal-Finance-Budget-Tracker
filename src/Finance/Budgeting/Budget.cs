@@ -22,5 +22,21 @@ public sealed class Budget
         WarningRatio = warningRatio;
     }
 
-    
+    //Tổng chi
+    public decimal Spent(IEnumerable<ITransaction> transactions)
+    {
+        return transactions
+            .OfType<Expense>()
+            .Where(e => e.Category == Category && Period.Contains(e.Date))
+            .Sum(e => e.Amount);
+    }
+
+    public BudgetStatus Evaluate(IEnumerable<ITransaction> transactions)
+    {
+        var spent = Spent(transactions);
+
+        if (spent > Limit) return BudgetStatus.Exceeded;
+        if (spent >= Limit * WarningRatio) return BudgetStatus.Warning;
+        return BudgetStatus.OK;
+    }
 }
