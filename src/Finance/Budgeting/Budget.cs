@@ -1,7 +1,4 @@
-using System.Diagnostics.Contracts;
-using BudgetTracker.Models;
-
-namespace BudgetTracker.Model;
+namespace BudgetTracker.Models;
 
 public sealed class Budget
 {
