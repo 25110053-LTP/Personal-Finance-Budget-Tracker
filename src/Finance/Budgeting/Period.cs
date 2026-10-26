@@ -13,4 +13,8 @@ public readonly record struct Period
         Year = year;
         Month = month;
     }
+
+    public static Period Of(DateTime date) => new(date.Year, date.Month);
+    public bool Contains(DateTime date) => date.Year == Year && date.Month == Month;
+    public override string ToString() => $"{Month:00}/{Year}";
 }
