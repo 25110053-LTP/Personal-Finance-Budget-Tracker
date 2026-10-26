@@ -15,7 +15,7 @@ public class BudgetTests
     public void Evaluate_SpentBelowWarning_ReturnsOk()
     {
         var list = new List<ITransaction> { Spend(500_000m) };
-        Assert.Equal(BudgetStatus.Ok, NewBudget().Evaluate(list));
+        Assert.Equal(BudgetStatus.OK, NewBudget().Evaluate(list));
     }
 
     [Fact] // BG-02
@@ -51,7 +51,7 @@ public class BudgetTests
 
         var budget = NewBudget();
         Assert.Equal(0m, budget.Spent(list));
-        Assert.Equal(BudgetStatus.Ok, budget.Evaluate(list));
+        Assert.Equal(BudgetStatus.OK, budget.Evaluate(list));
     }
 
     [Fact] // BG-06
