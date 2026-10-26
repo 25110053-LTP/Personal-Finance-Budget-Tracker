@@ -1,4 +1,4 @@
-namespace BudgetTracker.Model;
+namespace BudgetTracker.Models;
 
 public readonly record struct Period
 {
