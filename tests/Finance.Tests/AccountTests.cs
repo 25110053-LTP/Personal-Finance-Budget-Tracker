@@ -37,7 +37,30 @@ public class AccountTests
     public void Transaction_InvalidArguments_ThrowsArgumentException()
     {
         //Validation dùng chung
-        Assert.Throws<ArgumentOutOfRangeException>(() => new Income(-100m, "Thưởng"));
+        Assert.Throws<InvalidAmountException>(() => new Income(-100m, "Thưởng"));
         Assert.Throws<ArgumentException>(() => new Expense(100_000m, " ")); 
     }
+    [Fact] // VA-01
+    public void Record_ExpenseOverBalance_ThrowsAndKeepsState()
+    {
+        var acc = new Account("Ví", 100_000m);
+        var ex = Assert.Throws<InsufficientFundsException>(() => acc.Record(new Expense(150_000m, "Mua sắm")));
+
+    Assert.Equal("Ví", ex.AccountName);
+    Assert.Equal(100_000m, ex.Balance);
+    Assert.Equal(150_000m, ex.Requested);
+    Assert.Equal(100_000m, acc.Balance);
+    Assert.Empty(acc.Transactions);
 }
+
+    [Theory] // VA-02
+    [InlineData(0)]
+    [InlineData(-1)]
+    [InlineData(-500_000)]
+    public void CreateTransaction_NonPositiveAmount_ThrowsInvalidAmount(int amount)
+    {
+        Assert.Throws<InvalidAmountException>(() => new Income(amount, "Lương"));
+        Assert.Throws<InvalidAmountException>(() => new Expense(amount, "Ăn uống"));
+    }
+}
+
