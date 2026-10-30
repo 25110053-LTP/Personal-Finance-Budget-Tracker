@@ -15,4 +15,5 @@ public abstract class TransactionBase : ITransaction
     }
     public abstract void ApplyTo(Account account);
 
+    public override string ToString() => $"{GetType().Name,-8}{Amount,15:N0} đ  {Category}  {Date:dd/MM/yyyy}";
 }
