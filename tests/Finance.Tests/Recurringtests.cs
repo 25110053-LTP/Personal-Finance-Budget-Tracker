@@ -82,8 +82,8 @@ public class RecurringTests
         Assert.Equal(100m, ledger.GetAccount("CHK").Balance);
     }
 
-    [Fact(DisplayName = "PL-03 Ledger: nhiều Account, rule chạy đúng account của nó")]
-    public void PL03_Ledger_MultipleAccounts()
+    [Fact(DisplayName = "LG-01 Ledger: nhiều Account, rule chạy đúng account của nó")]
+    public void LG01_Ledger_MultipleAccounts()
     {
         var ledger = new Ledger();
         ledger.AddAccount(new Account("CHK", 5000m));
