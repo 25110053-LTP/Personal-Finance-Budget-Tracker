@@ -72,7 +72,7 @@ Console.WriteLine("\n== Tổng quan ==");
 foreach (var a in ledger.Accounts)
     Console.WriteLine($"{a.Name,-12}{a.Balance,15:N0} đ");
  
-var nw = ledger.GetNetWorth();
+var nw = new NetWorthSummary(ledger.Accounts);
 Console.WriteLine(new string('-', 30));
 Console.WriteLine($"{"Tài sản",-12}{nw.TotalAssets,15:N0} đ");
 Console.WriteLine($"{"Nợ",-12}{nw.TotalLiabilities,15:N0} đ");
