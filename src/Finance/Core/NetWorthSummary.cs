@@ -11,7 +11,7 @@ public sealed class NetWorthSummary
         ArgumentNullException.ThrowIfNull(accounts);
         var list = accounts.ToList();
 
-        TotalAssets = list.Where(a => a.Balance < 0).Sum(a => -a.Balance);
+        TotalAssets = list.Where(a => a.Balance > 0).Sum(a => a.Balance);
         TotalLiabilities = list.Where(a => a.Balance < 0).Sum(a => -a.Balance);
     }
 }
