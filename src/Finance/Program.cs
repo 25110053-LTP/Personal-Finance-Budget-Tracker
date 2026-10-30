@@ -1,7 +1,6 @@
 using BudgetTracker.Models;
 using BudgetTracker.Recurrence;
 
-// Nếu build báo thiếu Income, Expense, ITransaction hoặc InsufficientFundsException,
 // thêm using cho namespace của chúng (xem bước kiểm tra bên dưới).
 
 var account = new Account("Ví chính", openingBalance: 1_000_000m);
@@ -88,4 +87,11 @@ static void TryCreate(Func<ITransaction> factory)
     {
         Console.WriteLine($"Không hợp lệ: {ex.Message.Split('\n')[0]}");
     }
-}
+}  
+Console.WriteLine("\n== Báo cáo chi tiêu 03/2026 ==");
+var all = ledger.Accounts.SelectMany(a => a.Transactions).ToList();
+var report = new SpendingReportService();
+var march = new Period(2026, 3);
+foreach (var r in report.ByCategory(all, march))Console.WriteLine($"{r.Category,-12}{r.Total,15:N0} đ {r.Percent,6}%");
+var trend = new TrendAnalyzer(report).CompareWithPreviousMonth(all, march);
+Console.WriteLine($"So với tháng 2: {trend.Direction}, chênh {trend.Change:N0} đ");
