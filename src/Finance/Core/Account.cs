@@ -1,12 +1,12 @@
 //Chuyển kiểu dữ liệu tiền tệ sang decimal
 namespace BudgetTracker.Models;
 
-public sealed class Account
+public class Account
 {
     private readonly List<ITransaction> _transactions = new();
 
     public string Name {get;}
-    public decimal Balance {get; private set;}
+    public decimal Balance {get; protected set;}
     public IReadOnlyList<ITransaction> Transactions => _transactions;
 
     public Account(string name, decimal openingBalance = 0m)
@@ -37,7 +37,7 @@ public sealed class Account
         Balance += amount;
     }
 
-    internal void Withdraw(decimal amount)
+    internal virtual void Withdraw(decimal amount)
     {
         if (amount <= 0)
             throw new ArgumentOutOfRangeException(nameof(amount), "Số tiền phải lớn hơn 0.");
