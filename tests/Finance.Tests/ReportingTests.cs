@@ -79,4 +79,23 @@ public class ReportingTests
         Assert.Equal(-25.0m, t.PercentChange);
         Assert.Equal(TrendDirection.Down, t.Direction);
     }
+
+    [Fact] // RP-06: trend theo category, bỏ qua category khác
+    public void CategoryTrend_ComparesOnlyThatCategory()
+    {
+        var txs = new List<ITransaction>
+        {
+            Exp(100_000m, "Ăn uống", 2026, 9, 10),
+            Exp(150_000m, "Ăn uống", 2026, 10, 10),
+            Exp(900_000m, "Tiền nhà", 2026, 10, 1),   
+        };
+
+        var t = _trend.CompareCategoryWithPreviousMonth(txs, "Ăn uống", Oct2026);
+
+        Assert.Equal(100_000m, t.Previous);
+        Assert.Equal(150_000m, t.Current);
+        Assert.Equal(50.0m, t.PercentChange);
+        Assert.Equal(TrendDirection.Up, t.Direction);
+    }
 }
+

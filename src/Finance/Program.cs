@@ -95,3 +95,5 @@ var march = new Period(2026, 3);
 foreach (var r in report.ByCategory(all, march))Console.WriteLine($"{r.Category,-12}{r.Total,15:N0} đ {r.Percent,6}%");
 var trend = new TrendAnalyzer(report).CompareWithPreviousMonth(all, march);
 Console.WriteLine($"So với tháng 2: {trend.Direction}, chênh {trend.Change:N0} đ");
+var rentTrend = new TrendAnalyzer(report).CompareCategoryWithPreviousMonth(all, "Tiền nhà", march);
+Console.WriteLine($"Tiền nhà so với tháng 2: {rentTrend.Direction}, chênh {rentTrend.Change:N0} đ");

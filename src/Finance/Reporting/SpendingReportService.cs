@@ -30,4 +30,16 @@ public class SpendingReportService
             .Where(e => period.Contains(e.Date))
             .Sum(e => e.Amount);
     }
+
+    public decimal CategoryTotal(IEnumerable<ITransaction> transactions, Category category, Period period)
+    {
+    ArgumentNullException.ThrowIfNull(transactions);
+    ArgumentNullException.ThrowIfNull(category);
+
+    return transactions
+        .OfType<Expense>()
+        .Where(e => e.Category == category && period.Contains(e.Date))
+        .Sum(e => e.Amount);
+    }
 }
+

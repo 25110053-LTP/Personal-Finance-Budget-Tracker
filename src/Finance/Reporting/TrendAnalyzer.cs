@@ -38,4 +38,17 @@ public class TrendAnalyzer
             _report.TotalSpent(transactions, previousPeriod),
             _report.TotalSpent(transactions, period));
     }
+
+    private static Period PreviousOf(Period period) =>
+    Period.Of(new DateTime(period.Year, period.Month, 1).AddMonths(-1));
+
+    public TrendResult CompareCategoryWithPreviousMonth(IEnumerable<ITransaction> transactions, Category category, Period period)
+    {
+        ArgumentNullException.ThrowIfNull(transactions);
+        ArgumentNullException.ThrowIfNull(category);
+
+        return Compare(
+            _report.CategoryTotal(transactions, category, PreviousOf(period)),
+            _report.CategoryTotal(transactions, category, period));
+    }
 }
